@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <TaskProvider>
-        <div>
+        <div className="mb-8">
           <Header />
           <IncomeExpense />
           <AddTask />

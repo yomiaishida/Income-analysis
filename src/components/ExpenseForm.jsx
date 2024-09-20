@@ -28,6 +28,7 @@ export default function ExpenseForm() {
             Task
             <Input
               type="text"
+              placeholder="Enter Text"
               className="rounded"
               {...register("task", { required: true })}
             />
@@ -40,6 +41,7 @@ export default function ExpenseForm() {
             Amount (negative - expense, postive - income)
             <Input
               type="number"
+              placeholder="Enter Amount"
               className="rounded"
               {...register("amount", { required: true, valueAsNumber: true })}
             />
