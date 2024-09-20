@@ -8,9 +8,11 @@ function App() {
   return (
     <>
       <TaskProvider>
-        <div className="mb-8">
-          <Header />
-          <IncomeExpense />
+        <div className="mb-8 sm:flex sm:w-full justify-center space-x-14">
+          <div className="">
+            <Header />
+            <IncomeExpense />
+          </div>
           <AddTask />
         </div>
       </TaskProvider>
