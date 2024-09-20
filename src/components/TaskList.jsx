@@ -16,13 +16,33 @@ export default function TaskList() {
       <ul>
         {tasks.map((task) => (
           <li className="flex items-center " key={task.id}>
-            <Button className="bg-red-400" onClick={() => deleteTask(task.id)}>
-              X
-            </Button>
-            <Badge className="py-2 my-4 border-white w-full border-r-4 flex justify-between text-base">
-              <span>{task.task} </span>
-              <span>{task.amount} </span>
-            </Badge>
+            {task.amount < 0 ? (
+              <>
+                <Button
+                  className="bg-red-400 hover:border-red-400 hover:border"
+                  onClick={() => deleteTask(task.id)}
+                >
+                  X
+                </Button>
+                <Badge className="border-white py-2 my-4 border-r-red-500  w-full border-r-4 flex  justify-between text-base">
+                  <span>{task.task} </span>
+                  <span>{task.amount} </span>
+                </Badge>
+              </>
+            ) : (
+              <>
+                <Button
+                  className="bg-red-400 hover:border-red-400 hover:border"
+                  onClick={() => deleteTask(task.id)}
+                >
+                  X
+                </Button>
+                <Badge className="py-2 my-4 border-white w-full border-r-4 border-r-green-500 flex justify-between text-base">
+                  <span>{task.task} </span>
+                  <span>{task.amount} </span>
+                </Badge>
+              </>
+            )}
           </li>
         ))}
       </ul>
