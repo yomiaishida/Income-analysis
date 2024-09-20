@@ -12,11 +12,12 @@ export default function ExpenseForm() {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
     addTask(data);
+    reset();
   };
 
   return (
@@ -36,7 +37,7 @@ export default function ExpenseForm() {
 
         <div>
           <Label>
-            Amount
+            Amount (negative - expense, postive - income)
             <Input
               type="number"
               className="rounded"

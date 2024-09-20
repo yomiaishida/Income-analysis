@@ -8,6 +8,8 @@ export default function IncomeExpense() {
 
   const amounts = tasks.map((task) => task.amount);
 
+  const balance = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
+
   const income = amounts
     .filter((item) => item > 0)
     .reduce((acc, item) => (acc += item), 0)
@@ -22,17 +24,17 @@ export default function IncomeExpense() {
     <div className="flex items-center flex-col">
       <div className="flex justify-between w-96">
         <h2 className="text-2xl">Your balance:</h2>
-        <h1 className="text-4xl">#{income}</h1>
+        <h1 className="text-4xl">#{balance}</h1>
       </div>
       <Card className="w-96 my-4 flex justify-around py-4">
         <div className="flex flex-col ">
           <CardTitle className="text-xl ">INCOME</CardTitle>
-          <p className="text-lg text-green-300">#10000</p>
+          <p className="text-lg text-green-300">#{Math.abs(income)}</p>
         </div>
         <div className="border"></div>
         <div className="flex flex-col ">
           <CardTitle className="text-xl">Expense</CardTitle>
-          <p className="text-lg text-red-300">#{expense}</p>
+          <p className="text-lg text-red-300">#{Math.abs(expense)}</p>
         </div>
       </Card>
 

@@ -19,7 +19,7 @@ export default function TaskList() {
             <Button className="bg-red-400" onClick={() => deleteTask(task.id)}>
               X
             </Button>
-            <Badge className="py-2 my-4 border-white w-full border-r-4 border-r-red-500 flex justify-between text-base">
+            <Badge className="py-2 my-4 border-white w-full border-r-4 flex justify-between text-base">
               <span>{task.task} </span>
               <span>{task.amount} </span>
             </Badge>
